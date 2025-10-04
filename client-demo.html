@@ -40,10 +40,12 @@
     .search-model, .canvas-open, .canvas-menu, .offcanvas-menu-wrapper { display:none !important; }
 
     /* Simple mobile-friendly nav */
-    .header-section { position: relative; z-index: 1000; }
+    .header-section { position: relative; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 12px 0; }
+    .logo { display: flex; align-items: center; }
+    .logo img { max-height: 50px; width: auto; object-fit: contain; }
     .nav-menu ul { display:flex; gap:18px; flex-wrap:wrap; align-items:center; margin-bottom: 0; }
     .nav-menu ul li { list-style:none; }
-    .nav-menu ul li a { text-decoration:none; font-size:16px; }
+    .nav-menu ul li a { text-decoration:none; font-size:16px; color:#333; }
     /* Desktop: keep items on one line */
     /* Keep all nav items in one line on desktop */
     @media (min-width: 992px) {
@@ -52,9 +54,12 @@
     }
     /* Mobile hamburger */
     .nav-toggle { display:none; background:transparent; border:0; width:38px; height:34px; align-items:center; justify-content:center; gap:5px; cursor:pointer; }
-    .nav-toggle span { display:block; width:22px; height:2px; background:#fff; transition: transform .25s ease, opacity .25s ease; }
+    .nav-toggle span { display:block; width:22px; height:2px; background:#333; transition: transform .25s ease, opacity .25s ease; }
     @media (max-width: 991.98px) {
+      .header-section { background: #ffffff; padding: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+      .logo img { max-height: 45px; }
       .nav-toggle { display:inline-flex; float:right; margin-top:4px; }
+      .nav-toggle span { background:#333; }
       .nav-menu ul { display:none; position:absolute; left:0; right:0; top:100%; background: rgba(17,17,17,.96); padding:12px 16px; flex-direction:column; gap:10px; border-bottom:1px solid rgba(255,255,255,.08); }
       .nav-menu ul li a { color:#fff; font-size:16px; padding:8px 2px; display:block; }
       body.nav-open .nav-menu ul { display:flex; }
@@ -62,11 +67,6 @@
       body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
       body.nav-open .nav-toggle span:nth-child(2) { opacity:0; }
       body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    }
-    @media (max-width: 991.98px) {
-      .header-section { padding: 14px 0; }
-      .logo img { max-height: 38px; }
-      .nav-menu { margin-top: 10px; }
     }
   /* Logo size retained via media query above */
     /* Contact form + map */
